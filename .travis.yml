@@ -1,0 +1,16 @@
+language: ruby
+sudo: false
+
+rvm:
+  - 2.2.2
+  - 2.3.4
+  - 2.4.0
+
+addons:
+  apt:
+    packages:
+      - shellcheck
+
+script:
+  - bundle exec rubocop --display-cop-names
+  - shellcheck chef_bootstrap.sh
